@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Usercom = void 0;
 var axios_1 = __importDefault(require("axios"));
 var axios_retry_1 = __importDefault(require("axios-retry"));
+var event_1 = require("./event");
 var user_1 = require("./user");
 var Usercom = /** @class */ (function () {
     function Usercom(_a) {
@@ -40,6 +41,7 @@ var Usercom = /** @class */ (function () {
             },
         });
         this.user = new user_1.User({ client: this.axios });
+        this.event = new event_1.Event({ client: this.axios });
     }
     return Usercom;
 }());

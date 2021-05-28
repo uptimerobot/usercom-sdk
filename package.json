@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "ts-node ./tests",
     "build": "tsc --build",
     "clean": "tsc --build --clean"
   },
@@ -16,9 +16,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "typescript": "^4.2.4",
     "@types/axios": "^0.14.0",
-    "@types/node": "^15.0.1"
+    "@types/node": "^15.0.1",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.2.4"
   },
   "dependencies": {
     "axios": "^0.21.1",

@@ -1,9 +1,11 @@
+import { Event } from './event';
 import { User } from './user';
 export declare class Usercom {
     readonly subdomain: string;
     readonly token: string;
     private axios;
     readonly user: User;
+    readonly event: Event;
     constructor({ subdomain, token }: UsercomClientOptions);
 }
 declare enum LogLevel {
