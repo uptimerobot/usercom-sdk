@@ -1,9 +1,10 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
+import { BaseEndpoint } from './baseEndpoint';
+import { UserId } from './types';
 
-export class User {
-  private client: AxiosInstance;
-  constructor({ client }: UserOptions) {
-    this.client = client;
+export class User extends BaseEndpoint {
+  constructor({ client }: { client: AxiosInstance }) {
+    super({ client });
   }
 
   users({
@@ -24,7 +25,7 @@ export class User {
     return this.setCustomAttributes({ userId, customAttributes });
   }
 
-  delete({ userId }: { userId: string | number }): Promise<AxiosResponse> {
+  delete({ userId }: { userId: UserId }): Promise<AxiosResponse> {
     return this.client.delete(`/users-by-id/${userId}/`);
   }
 
@@ -39,10 +40,6 @@ export interface UsercomUser {
 }
 
 interface UserUpdateOptions<T = any> {
-  userId: string | number;
+  userId: UserId;
   customAttributes: T;
-}
-
-interface UserOptions {
-  client: AxiosInstance;
 }
