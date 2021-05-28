@@ -1,5 +1,4 @@
 import { AxiosInstance, AxiosResponse } from 'axios';
-import axiosRetry from 'axios-retry';
 
 export class User {
   private client: AxiosInstance;
