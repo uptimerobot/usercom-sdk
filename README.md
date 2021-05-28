@@ -37,3 +37,10 @@ usercom.user.update({ userId, customAttributes });
 // deletes user based on user ID attribute
 usercom.user.delete({ userId });
 ```
+
+### Events
+
+```node
+// timestamp and data is optional
+usercom.event.create({ userId, name, timestamp, data });
+```
