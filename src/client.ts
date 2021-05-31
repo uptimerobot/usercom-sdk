@@ -1,6 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 import axiosRetry from 'axios-retry';
 import { Event } from './event';
+import { Tag } from './tag';
 import { User } from './user';
 
 export class Usercom {
@@ -9,6 +10,7 @@ export class Usercom {
   private axios: AxiosInstance;
   public readonly user: User;
   public readonly event: Event;
+  public readonly tag: Tag;
 
   constructor({ subdomain, token }: UsercomClientOptions) {
     this.token = token;
@@ -47,6 +49,7 @@ export class Usercom {
 
     this.user = new User({ client: this.axios });
     this.event = new Event({ client: this.axios });
+    this.tag = new Tag({ client: this.axios });
   }
 }
 
