@@ -44,3 +44,14 @@ usercom.user.delete({ userId });
 // timestamp and data is optional
 usercom.event.create({ userId, name, timestamp, data });
 ```
+
+### Tags
+
+```node
+// returns paginated results of usercom tags
+usercom.tags();
+
+// returns a fetcher function similar to usercom.user.users
+// based on the provided tagId argument
+usercom.getUsersWithTag(tagId);
+```
