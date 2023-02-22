@@ -5,8 +5,9 @@ export declare class User extends BaseEndpoint {
     constructor({ client }: {
         client: AxiosInstance;
     });
-    users({ next, }: {
+    users({ next, params, }: {
         next?: null | string;
+        params?: Record<string, any>;
     }): Promise<AxiosResponse<{
         next: null | string;
         results: UsercomUser[];

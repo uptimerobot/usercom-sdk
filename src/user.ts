@@ -9,12 +9,14 @@ export class User extends BaseEndpoint {
 
   users({
     next = null,
+    params = {},
   }: {
     next?: null | string;
+    params?: Record<string, any>;
   }): Promise<AxiosResponse<{ next: null | string; results: UsercomUser[] }>> {
     const endpoint = next || `/users/`;
 
-    return this.client.get(endpoint);
+    return this.client.get(endpoint, { params });
   }
 
   create({ data }) {
