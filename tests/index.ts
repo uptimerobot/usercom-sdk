@@ -7,7 +7,7 @@ const test = async () => {
   });
 
   try {
-    const res = await usercom.user.users({ next: null });
+    const res = await usercom.user.search({ next: null, params: { is_pro__startswith: 'True' } });
     console.log('<<<<<<<<<<<<<<<---------->>>>>>>>>>>>>>>');
     console.log(res);
     console.log('<<<<<<<<<<<<<<<---------->>>>>>>>>>>>>>>');

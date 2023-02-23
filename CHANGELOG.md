@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.4.0 (February 22, 2023)
+
+- Added search endpoint for user
+
 ### 1.3.0 (February 22, 2023)
 
 - Added `params` option for "user.users` endpoint

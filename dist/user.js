@@ -25,7 +25,12 @@ var User = /** @class */ (function (_super) {
     }
     User.prototype.users = function (_a) {
         var _b = _a.next, next = _b === void 0 ? null : _b, _c = _a.params, params = _c === void 0 ? {} : _c;
-        var endpoint = next || "/users/";
+        var endpoint = next || "/users/search/?is_pro__startswith=True";
+        return this.client.get(endpoint, { params: params });
+    };
+    User.prototype.search = function (_a) {
+        var _b = _a.next, next = _b === void 0 ? null : _b, _c = _a.params, params = _c === void 0 ? {} : _c;
+        var endpoint = next || "/users/search/";
         return this.client.get(endpoint, { params: params });
     };
     User.prototype.create = function (_a) {
