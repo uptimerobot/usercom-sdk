@@ -26,7 +26,7 @@ export class Usercom {
 
     axiosRetry(this.axios, {
       retries: 3,
-      retryDelay: (retryCount, error) => {
+      retryDelay: (retryCount, error: any) => {
         // NOTE: if we hit rate limit delay the next retry for the time specified in headers
         if (error.response?.headers?.['retry-after']) {
           return error.response.headers['retry-after'];

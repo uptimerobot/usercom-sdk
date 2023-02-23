@@ -1,6 +1,6 @@
 {
   "name": "usercom-node-sdk",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -16,14 +16,13 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/axios": "^0.14.0",
     "@types/node": "^15.0.1",
     "ts-node": "^10.0.0",
     "typescript": "^4.2.4"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "axios-retry": "^3.1.9",
+    "axios": "^0.27.2",
+    "axios-retry": "^3.4.0",
     "delay": "^5.0.0",
     "p-queue": "^6.6.2",
     "p-retry": "^4.5.0"

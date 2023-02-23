@@ -25,7 +25,7 @@ var User = /** @class */ (function (_super) {
     }
     User.prototype.users = function (_a) {
         var _b = _a.next, next = _b === void 0 ? null : _b, _c = _a.params, params = _c === void 0 ? {} : _c;
-        var endpoint = next || "/users/search/?is_pro__startswith=True";
+        var endpoint = next || "/users/";
         return this.client.get(endpoint, { params: params });
     };
     User.prototype.search = function (_a) {
@@ -40,6 +40,17 @@ var User = /** @class */ (function (_super) {
     User.prototype.update = function (_a) {
         var userId = _a.userId, customAttributes = _a.customAttributes;
         return this.setCustomAttributes({ userId: userId, customAttributes: customAttributes });
+    };
+    User.prototype.massUpdateCustomAttribute = function (ids, payload) {
+        var data = {
+            ids: ids,
+            attribute: payload.attribute,
+            value: payload.value,
+        };
+        return this.client.put("/users/mass_update_custom_attributes/", data);
+    };
+    User.prototype.updateOrCreate = function (payload) {
+        return this.client.post("/users/update_or_create/", payload);
     };
     User.prototype.delete = function (_a) {
         var userId = _a.userId;

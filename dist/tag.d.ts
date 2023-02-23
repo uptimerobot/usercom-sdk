@@ -10,7 +10,7 @@ export declare class Tag extends BaseEndpoint {
         results: {
             user_id: string;
         }[];
-    }>>;
+    }, any>>;
 }
 export interface TagsResponse {
     count: number;
