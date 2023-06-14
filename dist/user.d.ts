@@ -31,6 +31,10 @@ export declare class User extends BaseEndpoint {
     delete({ userId }: {
         userId: UserId;
     }): Promise<AxiosResponse>;
+    segment(segmentId: number): Promise<AxiosResponse<{
+        next: null | string;
+        results: UsercomUser[];
+    }>>;
     private setCustomAttributes;
 }
 export interface UsercomUser {

@@ -56,6 +56,9 @@ var User = /** @class */ (function (_super) {
         var userId = _a.userId;
         return this.client.delete("/users-by-id/" + userId + "/");
     };
+    User.prototype.segment = function (segmentId) {
+        return this.client.get("/segments/" + segmentId + "/users/");
+    };
     User.prototype.setCustomAttributes = function (_a) {
         var userId = _a.userId, customAttributes = _a.customAttributes;
         return this.client.post("/users-by-id/" + userId + "/set_multiple_attributes/", customAttributes);

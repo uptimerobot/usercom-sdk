@@ -51,6 +51,10 @@ export class User extends BaseEndpoint {
     return this.client.delete(`/users-by-id/${userId}/`);
   }
 
+  segment(segmentId: number): Promise<AxiosResponse<{ next: null | string; results: UsercomUser[] }>> {
+    return this.client.get(`/segments/${segmentId}/users/`);
+  }
+
   private setCustomAttributes({ userId, customAttributes }): Promise<AxiosResponse> {
     return this.client.post(`/users-by-id/${userId}/set_multiple_attributes/`, customAttributes);
   }
