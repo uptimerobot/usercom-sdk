@@ -19,7 +19,13 @@ export class User extends BaseEndpoint {
     return this.client.get(endpoint, { params });
   }
 
-  search({ next = null, params = {} }): Promise<AxiosResponse<{ next: null | string; results: UsercomUser[] }>> {
+  search({
+    next = null,
+    params = {}
+  }: {
+    next: null | string;
+    params?: Record<string, any>;
+  }): Promise<AxiosResponse<{ next: null | string; results: UsercomUser[] }>> {
     const endpoint = next || `/users/search/`;
 
     return this.client.get(endpoint, { params });
