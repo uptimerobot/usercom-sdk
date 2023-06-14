@@ -13,8 +13,8 @@ export declare class User extends BaseEndpoint {
         results: UsercomUser[];
     }>>;
     search({ next, params }: {
-        next?: null | undefined;
-        params?: {} | undefined;
+        next: null | string;
+        params?: Record<string, any>;
     }): Promise<AxiosResponse<{
         next: null | string;
         results: UsercomUser[];
