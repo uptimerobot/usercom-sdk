@@ -30,7 +30,7 @@ var Tag = /** @class */ (function (_super) {
         var _this = this;
         return function (next) {
             if (next === void 0) { next = null; }
-            var endpoint = next || "/tags/" + tagId + "/users/";
+            var endpoint = next || "/tags/".concat(tagId, "/users/");
             return _this.client.get(endpoint);
         };
     };
