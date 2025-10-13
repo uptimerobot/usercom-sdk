@@ -54,14 +54,14 @@ var User = /** @class */ (function (_super) {
     };
     User.prototype.delete = function (_a) {
         var userId = _a.userId;
-        return this.client.delete("/users-by-id/" + userId + "/");
+        return this.client.delete("/users-by-id/".concat(userId, "/"));
     };
     User.prototype.segment = function (segmentId) {
-        return this.client.get("/segments/" + segmentId + "/users/");
+        return this.client.get("/segments/".concat(segmentId, "/users/"));
     };
     User.prototype.setCustomAttributes = function (_a) {
         var userId = _a.userId, customAttributes = _a.customAttributes;
-        return this.client.post("/users-by-id/" + userId + "/set_multiple_attributes/", customAttributes);
+        return this.client.post("/users-by-id/".concat(userId, "/set_multiple_attributes/"), customAttributes);
     };
     return User;
 }(baseEndpoint_1.BaseEndpoint));

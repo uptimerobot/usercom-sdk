@@ -25,7 +25,7 @@ var Event = /** @class */ (function (_super) {
     }
     Event.prototype.create = function (_a) {
         var userId = _a.userId, name = _a.name, timestamp = _a.timestamp, data = _a.data;
-        return this.client.post("/users-by-id/" + userId + "/events/", { name: name, timestamp: timestamp, data: data });
+        return this.client.post("/users-by-id/".concat(userId, "/events/"), { name: name, timestamp: timestamp, data: data });
     };
     return Event;
 }(baseEndpoint_1.BaseEndpoint));

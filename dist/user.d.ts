@@ -21,13 +21,13 @@ export declare class User extends BaseEndpoint {
     }>>;
     create({ data }: {
         data: any;
-    }): Promise<AxiosResponse<any, any>>;
+    }): Promise<AxiosResponse<any, any, {}>>;
     update({ userId, customAttributes }: UserUpdateOptions): Promise<AxiosResponse>;
     massUpdateCustomAttribute(ids: number[], payload: {
         attribute: string;
         value: any;
-    }): Promise<AxiosResponse<any, any>>;
-    updateOrCreate(payload: Record<string, any>): Promise<AxiosResponse<any, any>>;
+    }): Promise<AxiosResponse<any, any, {}>>;
+    updateOrCreate(payload: Record<string, any>): Promise<AxiosResponse<any, any, {}>>;
     delete({ userId }: {
         userId: UserId;
     }): Promise<AxiosResponse>;

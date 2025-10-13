@@ -14,14 +14,14 @@ var Usercom = /** @class */ (function () {
         var subdomain = _a.subdomain, token = _a.token;
         this.token = token;
         this.axios = axios_1.default.create({
-            baseURL: "https://" + subdomain + ".user.com/api/public",
+            baseURL: "https://".concat(subdomain, ".user.com/api/public"),
             headers: {
-                Authorization: "Token " + token,
+                Authorization: "Token ".concat(token),
                 'content-type': 'application/json',
             },
             timeout: 60000,
         });
-        axios_retry_1.default(this.axios, {
+        (0, axios_retry_1.default)(this.axios, {
             retries: 3,
             retryDelay: function (retryCount, error) {
                 var _a, _b;
